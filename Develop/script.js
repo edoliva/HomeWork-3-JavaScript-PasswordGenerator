@@ -23,10 +23,6 @@ var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var specialCharacters = "!#%&()*+-$^\|][{}].,_/:;<=>?@";
-var allCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#%&()*+-$^\|][{}].,_/:;<=>?@";
-
-
-
 
 // var randomCharacterArray = allCharacters[Math.floor(Math.random() * allCharacters.length)];
 // var randomCharactersALL = randomCharacterArray[Math.floor(Math.random() * randomCharacterArray.length)];
@@ -34,6 +30,7 @@ var allCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456
 var password = "";
   
 function writePassword() {  
+    password = "";
     document.getElementById("password").value = "";
     var response1 = prompt(p1,);
     var characters = "";
@@ -48,6 +45,13 @@ function writePassword() {
         var yesNumber = confirm(pNumber); 
         var yesSpecial = confirm(pSpecCharacter);
 
+    if (yesLowerCase === false && yesUpperCase === false && yesNumber === false && yesSpecial === false ) {
+        alert("Response must include one character type.");
+        var tryAgain = confirm("Would you like to try again?");
+        if (tryAgain) {
+        writePassword(); }
+    }
+    
     if (yesLowerCase) { 
         var characters = lower;
     } if (yesUpperCase) { 
@@ -56,9 +60,7 @@ function writePassword() {
         var characters = characters + number;
     } if (yesSpecial) { 
         var characters = characters + specialCharacters;
-    } 
-    
-    for (var i = 0; i < response1; i++){
+    } for (var i = 0; i < response1; i++){
         password = password + characters.charAt(Math.floor(Math.random() * Math.floor(characters.length - 1)));
         } document.getElementById("password").value = password;
 }

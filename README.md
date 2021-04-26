@@ -1,6 +1,6 @@
-# HomeWork-3-JavaScript-PasswordGenerator
+# Random Password Generator
  
-## HW 3 Description
+## Description
 This webpage was created with the intention of creating a randomly generated password dependant on some user selected criteria. This criteria includes:
 - Desired password length
 - Character type requirements:
@@ -26,7 +26,7 @@ This webpage was created with the intention of creating a randomly generated pas
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-Clone or download this repository on GitHub then open "HomeWork-3-JavaScript-PasswordGenerator/Develop/index.html" in a browser.  
+Clone or download this repository on GitHub then open "edoliva.github.io/RandomPasswordGenerator/Develop/index.html" in a browser.  
 ## Criteria
 - The user is initially prompted to enter a number from 8-128. If the user inputs a number less than 8, more than 128, or a non integer, an alert is triggered to let the user know, and asks if they would like to retry.
 - If the user has selected a lowercase character, then a truthly value is assigned to a variable for lowercase characters. This is the case for the remaining 3 character types.
